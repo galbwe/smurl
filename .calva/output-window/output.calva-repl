@@ -1,0 +1,628 @@
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/wes/projects/smurl; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:62134 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/smurl/hashing.clj:4:39).
+; str.join
+clj꞉smurl.hashing꞉> 
+#function[clojure.core/range]
+clj꞉smurl.hashing꞉> 
+#function[clojure.core/map]
+clj꞉smurl.hashing꞉> 
+(0 1 2 3 4 5 6 7 8 9)
+clj꞉smurl.hashing꞉> 
+("0" "1" "2" "3" "4" "5" "6" "7" "8" "9")
+clj꞉smurl.hashing꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/smurl/hashing.clj:8:29).
+; str.join
+clj꞉smurl.hashing꞉> 
+nil
+clj꞉smurl.hashing꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/smurl/hashing.clj:8:29).
+; str.join
+clj꞉smurl.hashing꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/smurl/hashing.clj:8:29).
+; str.join
+clj꞉smurl.hashing꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/smurl/hashing.clj:8:3).
+; str.join
+clj꞉smurl.hashing꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/smurl/hashing.clj:8:3).
+; str.join
+clj꞉smurl.hashing꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/smurl/hashing.clj:8:3).
+; str.join
+clj꞉smurl.hashing꞉> 
+nil
+clj꞉smurl.hashing꞉> 
+"0123456789"
+clj꞉smurl.hashing꞉> 
+"0123456789"
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/digits
+clj꞉smurl.hashing꞉> 
+"0123456789"
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/chars-lower
+clj꞉smurl.hashing꞉> 
+"abcdefghijklmnopqrstuvwxyz"
+clj꞉smurl.hashing꞉> 
+; Syntax error compiling at (src/smurl/hashing.clj:13:3).
+; Unable to resolve symbol: upper-case in this context
+clj꞉smurl.hashing꞉> 
+nil
+clj꞉smurl.hashing꞉> 
+nil
+clj꞉smurl.hashing꞉> 
+("A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z")
+clj꞉smurl.hashing꞉> 
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/chars-upper
+clj꞉smurl.hashing꞉> 
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+clj꞉smurl.hashing꞉> 
+"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/chars
+; 
+; WARNING: chars already refers to: #'clojure.core/chars in namespace: smurl.hashing, being replaced by: #'smurl.hashing/chars
+clj꞉smurl.hashing꞉> 
+"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+clj꞉smurl.hashing꞉> 
+"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+clj꞉smurl.hashing꞉> 
+; Syntax error compiling at (src/smurl/hashing.clj:11:3).
+; Unable to resolve symbol: split in this context
+clj꞉smurl.hashing꞉> 
+nil
+clj꞉smurl.hashing꞉> 
+; Execution error (ArityException) at smurl.hashing/eval10617 (form-init10912638515179566957.clj:11).
+; Wrong number of args (1) passed to: clojure.string/split
+clj꞉smurl.hashing꞉> 
+; Syntax error reading source at (REPL:11:19).
+; Unmatched delimiter: )
+clj꞉smurl.hashing꞉> 
+; Execution error (ClassCastException) at smurl.hashing/eval10619 (form-init10912638515179566957.clj:11).
+; class java.lang.String cannot be cast to class java.util.regex.Pattern (java.lang.String and java.util.regex.Pattern are in module java.base of loader 'bootstrap')
+clj꞉smurl.hashing꞉> 
+; Execution error (UnsupportedOperationException) at smurl.hashing/eval10621 (form-init10912638515179566957.clj:11).
+; nth not supported on this type: core$chars
+clj꞉smurl.hashing꞉> 
+; Execution error (UnsupportedOperationException) at smurl.hashing/eval10623 (form-init10912638515179566957.clj:11).
+; nth not supported on this type: core$chars
+clj꞉smurl.hashing꞉> 
+; Execution error (UnsupportedOperationException) at smurl.hashing/eval10625 (form-init10912638515179566957.clj:11).
+; nth not supported on this type: core$chars
+clj꞉smurl.hashing꞉> 
+1
+clj꞉smurl.hashing꞉> 
+(1 2 3 4 5 6)
+clj꞉smurl.hashing꞉> 
+(1 2 3 4 5 6 7 8 9)
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/digits
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/chars-lower
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/chars-upper
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/chars
+; 
+; WARNING: chars already refers to: #'clojure.core/chars in namespace: smurl.hashing, being replaced by: #'smurl.hashing/chars
+clj꞉smurl.hashing꞉> 
+("0"
+ "1"
+ "2"
+ "3"
+ "4"
+ "5"
+ "6"
+ "7"
+ "8"
+ "9"
+ \a
+ \b
+ \c
+ \d
+ \e
+ \f
+ \g
+ \h
+ \i
+ \j
+ \k
+ \l
+ \m
+ \n
+ \o
+ \p
+ \q
+ \r
+ \s
+ \t
+ \u
+ \v
+ \w
+ \x
+ \y
+ \z
+ "A"
+ "B"
+ "C"
+ "D"
+ "E"
+ "F"
+ "G"
+ "H"
+ "I"
+ "J"
+ "K"
+ "L"
+ "M"
+ "N"
+ ...)
+clj꞉smurl.hashing꞉> 
+("A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z")
+clj꞉smurl.hashing꞉> 
+"abcdefghijklmnopqrstuvwxyz"
+clj꞉smurl.hashing꞉> 
+("0" "1" "2" "3" "4" "5" "6" "7" "8" "9")
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/chars
+clj꞉smurl.hashing꞉> 
+("0"
+ "1"
+ "2"
+ "3"
+ "4"
+ "5"
+ "6"
+ "7"
+ "8"
+ "9"
+ \a
+ \b
+ \c
+ \d
+ \e
+ \f
+ \g
+ \h
+ \i
+ \j
+ \k
+ \l
+ \m
+ \n
+ \o
+ \p
+ \q
+ \r
+ \s
+ \t
+ \u
+ \v
+ \w
+ \x
+ \y
+ \z
+ "A"
+ "B"
+ "C"
+ "D"
+ "E"
+ "F"
+ "G"
+ "H"
+ "I"
+ "J"
+ "K"
+ "L"
+ "M"
+ "N"
+ ...)
+clj꞉smurl.hashing꞉> 
+; Syntax error compiling at (src/smurl/hashing.clj:12:1).
+; Unable to resolve symbol: len in this context
+clj꞉smurl.hashing꞉> 
+; Syntax error compiling at (src/smurl/hashing.clj:12:1).
+; Unable to resolve symbol: length in this context
+clj꞉smurl.hashing꞉> 
+"2"
+clj꞉smurl.hashing꞉> 
+"2"
+clj꞉smurl.hashing꞉> 
+\a
+clj꞉smurl.hashing꞉> 
+"S"
+clj꞉smurl.hashing꞉> 
+2
+clj꞉smurl.hashing꞉> 
+3
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/base-62
+clj꞉smurl.hashing꞉> 
+; 100001 nil
+nil
+clj꞉smurl.hashing꞉> 
+; 100001 nil
+nil
+clj꞉smurl.hashing꞉> 
+; 100001 nil
+nil
+clj꞉smurl.hashing꞉> 
+; 100001 nil
+nil
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/base-62
+clj꞉smurl.hashing꞉> 
+((57))
+clj꞉smurl.hashing꞉> 
+3534
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/base-62
+clj꞉smurl.hashing꞉> 
+(0 (57))
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/euclidean-algo-step
+clj꞉smurl.hashing꞉> 
+; Error printing return value (ArityException) at clojure.lang.AFn/throwArity (AFn.java:429).
+; Wrong number of args (1) passed to: smurl.hashing/euclidean-algo-step
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/steps
+clj꞉smurl.hashing꞉> 
+; Execution error (ArityException) at smurl.hashing/eval10667 (form-init10912638515179566957.clj:24).
+; Wrong number of args (1) passed to: smurl.hashing/euclidean-algo-step
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/euclidean-algo-step
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/steps
+clj꞉smurl.hashing꞉> 
+[1612 57]
+clj꞉smurl.hashing꞉> 
+[100001 0]
+clj꞉smurl.hashing꞉> 
+[1612 57]
+clj꞉smurl.hashing꞉> 
+[26 0]
+clj꞉smurl.hashing꞉> 
+[0 26]
+clj꞉smurl.hashing꞉> 
+[0 0]
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/remainders
+clj꞉smurl.hashing꞉> 
+0
+clj꞉smurl.hashing꞉> 
+0
+clj꞉smurl.hashing꞉> 
+; Error printing return value (IllegalArgumentException) at clojure.lang.RT/seqFrom (RT.java:557).
+; Don't know how to create ISeq from: java.lang.Long
+clj꞉smurl.hashing꞉> 
+(57 0 26 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ...)
+clj꞉smurl.hashing꞉> 
+(57 0 26)
+clj꞉smurl.hashing꞉> 
+(26 0 57)
+clj꞉smurl.hashing꞉> 
+(26 0 57)
+clj꞉smurl.hashing꞉> 
+100001
+clj꞉smurl.hashing꞉> 
+; Syntax error compiling at (src/smurl/hashing.clj:19:25).
+; Unable to resolve symbol: x in this context
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/base-62
+clj꞉smurl.hashing꞉> 
+"2Bj"
+clj꞉smurl.hashing꞉> 
+"2Bk"
+clj꞉smurl.hashing꞉> 
+"2Bl"
+clj꞉smurl.hashing꞉> 
+""
+clj꞉smurl.hashing꞉> 
+"1"
+clj꞉smurl.hashing꞉> 
+"2"
+clj꞉smurl.hashing꞉> 
+"a"
+clj꞉smurl.hashing꞉> 
+"A"
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/base-62
+clj꞉smurl.hashing꞉> 
+"0"
+clj꞉smurl.hashing꞉> 
+"1"
+clj꞉smurl.hashing꞉> 
+"2"
+clj꞉smurl.hashing꞉> 
+"a"
+clj꞉smurl.hashing꞉> 
+"A"
+clj꞉smurl.hashing꞉> 
+"2Bj"
+clj꞉smurl.hashing꞉> 
+"2Bk"
+clj꞉smurl.hashing꞉> 
+"2Bl"
+clj꞉smurl.hashing꞉> 
+"10"
+clj꞉smurl.hashing꞉> 
+"11"
+clj꞉smurl.hashing꞉> 
+; Evaluating file: hashing.clj
+100001
+clj꞉smurl.hashing꞉> 
+"0"
+clj꞉smurl.hashing꞉> 
+"1"
+clj꞉smurl.hashing꞉> 
+"2"
+clj꞉smurl.hashing꞉> 
+"a"
+clj꞉smurl.hashing꞉> 
+"A"
+clj꞉smurl.hashing꞉> 
+"10"
+clj꞉smurl.hashing꞉> 
+"11"
+clj꞉smurl.hashing꞉> 
+"2Bj"
+clj꞉smurl.hashing꞉> 
+"2Bk"
+clj꞉smurl.hashing꞉> 
+"2Bl"
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/euclidean-algo-step
+clj꞉smurl.hashing꞉> 
+#'smurl.hashing/base-62
+clj꞉smurl.hashing꞉> 
+"0"
+clj꞉smurl.hashing꞉> 
+"1"
+clj꞉smurl.hashing꞉> 
+"2"
+clj꞉smurl.hashing꞉> 
+"a"
+clj꞉smurl.hashing꞉> 
+"A"
+clj꞉smurl.hashing꞉> 
+"10"
+clj꞉smurl.hashing꞉> 
+"11"
+clj꞉smurl.hashing꞉> 
+"2Bj"
+clj꞉smurl.hashing꞉> 
+"2Bk"
+clj꞉smurl.hashing꞉> 
+"2Bl"
+clj꞉smurl.hashing꞉> 
+; Evaluating file: database.clj
+; 
+; ; clj  smurl.database 
+; Execution error (FileNotFoundException) at smurl.database/eval13379$loading (database.clj:1).
+; Could not locate hugsql/adapter/next_jdbc__init.class, hugsql/adapter/next_jdbc.clj or hugsql/adapter/next_jdbc.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+; Evaluation of file database.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉smurl.database꞉> 
+; Evaluating file: database.clj
+; 
+; Execution error (FileNotFoundException) at smurl.database/eval13388$loading (database.clj:1).
+; Could not locate hugsql/adapter/next_jdbc__init.class, hugsql/adapter/next_jdbc.clj or hugsql/adapter/next_jdbc.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+; Evaluation of file database.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉smurl.database꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/wes/projects/smurl; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:63106 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: database.clj
+#'smurl.database/drop-tables
+clj꞉smurl.database꞉> 
+#'smurl.database/drop-tables
+clj꞉smurl.database꞉> 
+[#:next.jdbc{:update-count 0}]
+clj꞉smurl.database꞉> 
+[#:next.jdbc{:update-count 0}]
+clj꞉smurl.database꞉> 
+#'smurl.database/create-url
+clj꞉smurl.database꞉> 
+[{:id 1}]
+clj꞉smurl.database꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2674).
+; ERROR: duplicate key value violates unique constraint "urls_long_url_key"
+;   Detail: Key (long_url)=(https://en.wikipedia.org/wiki/URL_shortening) already exists.
+clj꞉smurl.database꞉> 
+[{:id 3}]
+clj꞉smurl.database꞉> 
+; Syntax error compiling at (src/smurl/database.clj:34:19).
+; No such namespace: hashing
+clj꞉smurl.database꞉> 
+; Evaluating file: database.clj
+{:id 4, :short-url "4", :long-url "https://en.wikipedia.org/wiki/URL_shortening"}
+clj꞉smurl.database꞉> 
+1
+clj꞉smurl.database꞉> 
+nil
+clj꞉smurl.database꞉> 
+2
+clj꞉smurl.database꞉> 
+1
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-long-url
+clj꞉smurl.database꞉> 
+{:id nil, :short-url nil, :long-url nil}
+clj꞉smurl.database꞉> 
+; Syntax error compiling at (src/smurl/database.clj:41:13).
+; Unable to resolve symbol: long-url in this context
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-long-url
+clj꞉smurl.database꞉> 
+{:id nil, :short-url nil, :long-url nil}
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-long-url
+clj꞉smurl.database꞉> 
+; [:id 4]
+{:id nil, :short-url nil, :long-url nil}
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-long-url
+clj꞉smurl.database꞉> 
+; row:  [:id 4]
+{:id nil, :short-url nil, :long-url nil}
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-long-url
+clj꞉smurl.database꞉> 
+; row:  [:id 4]
+{:id nil, :short-url nil, :long-url nil}
+clj꞉smurl.database꞉> 
+; Evaluating file: database.clj
+; row:  [:id 4]
+{:id nil, :short-url nil, :long-url nil}
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-long-url
+clj꞉smurl.database꞉> 
+; res:  {:id 4, :short_url 4, :long_url https://en.wikipedia.org/wiki/URL_shortening}
+; row:  [:id 4]
+{:id nil, :short-url nil, :long-url nil}
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-long-url
+clj꞉smurl.database꞉> 
+{:id 4, :short-url "4", :long-url "https://en.wikipedia.org/wiki/URL_shortening"}
+clj꞉smurl.database꞉> 
+nil
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-long-url
+clj꞉smurl.database꞉> 
+{:id 4, :short-url "4", :long-url "https://en.wikipedia.org/wiki/URL_shortening"}
+clj꞉smurl.database꞉> 
+nil
+clj꞉smurl.database꞉> 
+#'smurl.database/handle-urls-row
+clj꞉smurl.database꞉> 
+#'smurl.database/create-url
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-long-url
+clj꞉smurl.database꞉> 
+{:id 4, :short-url "4", :long-url "https://en.wikipedia.org/wiki/URL_shortening"}
+clj꞉smurl.database꞉> 
+nil
+clj꞉smurl.database꞉> 
+#'smurl.database/get-url-by-short-url
+clj꞉smurl.database꞉> 
+{:id 4, :short-url "4", :long-url "https://en.wikipedia.org/wiki/URL_shortening"}
+clj꞉smurl.database꞉> 
+nil
+clj꞉smurl.database꞉> 
+; Evaluating file: database.clj
+; 
+; Execution error (FileNotFoundException) at smurl.database/eval15458$loading (database.clj:1).
+; Could not locate environ/core__init.class, environ/core.clj or environ/core.cljc on classpath.
+; Evaluation of file database.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉smurl.database꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/wes/projects/smurl; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:63533 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: database.clj
+; Warning: environ value false for key :ssl has been cast to string
+; Warning: environ value smurl for key :user has been overwritten with wes
+#'smurl.database/get-url-by-short-url
+clj꞉smurl.database꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.ConnectionFactoryImpl/doAuthentication (ConnectionFactoryImpl.java:623).
+; FATAL: password authentication failed for user "wes"
+clj꞉smurl.database꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/wes/projects/smurl; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:63764 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: database.clj
+; Warning: environ value false for key :db-ssl has been cast to string
+{:id 4, :short-url "4", :long-url "https://en.wikipedia.org/wiki/URL_shortening"}
+clj꞉smurl.database꞉> 
+2
+clj꞉smurl.app꞉> 
+nil
+clj꞉smurl.app꞉> 
