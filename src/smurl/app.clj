@@ -1,7 +1,7 @@
 (ns smurl.app
-  (:require 
-   [compojure.core :refer [defroutes GET POST]] 
-   [compojure.route :as route] 
+  (:require
+   [compojure.core :refer [defroutes GET POST]]
+   [compojure.route :as route]
    [ring.middleware.json :refer [wrap-json-response wrap-json-body]]
    [ring.util.response :refer [response status redirect not-found]]
    [smurl.database :refer [create-url get-url-by-long-url get-url-by-short-url]]))
@@ -10,7 +10,7 @@
 ;; TODO: add middleware that handles other types of exceptions
 ;; TODO: validate the long url
 (defn create-url-handler
-"Handler that creates a new shortened url if it does not already exist, and retrieves an existing url"
+  "Handler that creates a new shortened url if it does not already exist, and retrieves an existing url"
   [request]
   (try
     (let
@@ -24,24 +24,20 @@
         (if
          (= sql-state "23505")
         ;;  the url already exists in the db. Return the url.
-          (let 
+          (let
            [long-url (-> request :body (get "longUrl")) url (get-url-by-long-url long-url)]
             (response {"id" (:id url) "shortUrl" (:short-url url) "longUrl" (:long-url url)}))
           (throw e))))))
 
-
 ;; TODO: handle database exceptions
 (defn redirect-handler
- "Handler that retrieves a long url from a short url and redirects to the long url" 
- [request]
- (let 
-  [short-url (-> request :params :hash)
-   url (get-url-by-short-url short-url)
-   long-url (:long-url url)]
-   (if (nil? long-url) nil (redirect long-url 301))
-    )
-  )
-
+  "Handler that retrieves a long url from a short url and redirects to the long url"
+  [request]
+  (let
+   [short-url (-> request :params :hash)
+    url (get-url-by-short-url short-url)
+    long-url (:long-url url)]
+    (if (nil? long-url) nil (redirect long-url 301))))
 
 (defroutes app
   (GET "/" [] "<h1>Smurl - A small url shortener written in Clojure</h1>")

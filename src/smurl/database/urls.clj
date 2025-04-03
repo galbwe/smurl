@@ -1,7 +1,5 @@
 (ns smurl.database.urls
- (:require [hugsql.core :as hugsql]) 
-
-  )
+  (:require [hugsql.core :as hugsql]))
 
 (hugsql/def-db-fns "smurl/database/sql/urls.sql")
 
