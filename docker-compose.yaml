@@ -10,3 +10,9 @@ services:
       POSTGRES_PASSWORD: smurl
     ports:
       - 5432:5432
+
+  api:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 8080:3000

@@ -1,5 +1,10 @@
 -- Maps short urls to the original url
 
+-- :name select-test
+-- :command :execute
+-- :result :raw
+select 1;
+
 -- :name create-urls-table
 -- :command :execute
 -- :result :raw

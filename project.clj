@@ -17,12 +17,12 @@
             [lein-environ "1.2.0"]] 
   :resource-paths ["resources" "target"]
   :clean-targets ^{:protect false} ["target/public"]
-  :ring {:handler smurl.app/app :init smurl.database/create-tables}
+  :ring {:handler smurl.app/app :init smurl.database/init-localdev :destroy smurl.database/teardown-localdev}
   :profiles {
              :dev {:dependencies [[ring/ring-devel "1.8.2"]]
                    :env {
                          :db-type "postgresql"
-                         :db-name "postgres"
+                         :db-name "smurl"
                          :db-host "localhost"
                          :db-user "smurl"
                          :db-password "smurl"
@@ -31,6 +31,6 @@
                    }
              }
   :aliases {
-            "api" ["ring" "server" "8080"]
+            "api" ["ring" "server-headless" "8080"],
   }
   ) 
