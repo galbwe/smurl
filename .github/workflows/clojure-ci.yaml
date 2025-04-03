@@ -7,15 +7,16 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-    - name: Install dependencies
-      run: lein deps
-    - name: Check formatting
-      run: lein cljfmt check
-    - name: Run tests
-      run: lein test
+    - name: Use oxr463/setup-leiningen
+      uses: oxr463/setup-leiningen@0.0.1
+      with:
+        exec: |
+          lein deps &&
+          lein cljfmt check &&
+          lein test
