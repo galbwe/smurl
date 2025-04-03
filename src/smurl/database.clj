@@ -79,12 +79,6 @@
        (let [long-urls (map :long-url (:urls data))] (loop [urls long-urls]
                                                        (if (not-empty urls) (do (create-url (first urls)) (recur (rest urls))) nil))))))
 
-(comment
-  local-dev-data
-  (do (log/info "Populating local dev database ...")
-      (let [_ (println local-dev-data) long-urls (map :long-url (:urls local-dev-data)) _ (println long-urls)] (loop [urls long-urls]
-                                                                                                                 (if (not-empty urls) (do (println (first urls)) (recur (rest urls))) nil)))))
-
 (defn init-localdev
   "Create database schema and insert localdev data"
   []

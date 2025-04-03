@@ -6,6 +6,8 @@ This is a url-shortener pet project for learning the Clojure development ecosyst
 
 ## Local Development
 
+### Running The Project
+
 To run and work with the project locally, you will need the following installed:
 - Docker
 - Leiningen
@@ -26,3 +28,25 @@ curl --location 'http://localhost:8080/api/urls' \
 }'
 ```
 1. The database tables should get cleaned up automatically when you stop the ring server.
+
+
+### Testing
+
+The tests in this project are run with [Kaocha](https://cljdoc.org/d/lambdaisland/kaocha/1.91.1392/doc/readme)
+
+To run the tests, run:
+
+```
+lein test
+```
+
+To rerun the tests after you make changes, add the `--watch` flag.
+
+```
+lein test --watch
+```
+
+
+### Other development tooling
+
+To format the project, run `lein fmt`

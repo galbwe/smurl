@@ -28,9 +28,11 @@
                          :db-password "smurl"
                          :db-ssl false
                          }
-                   }
+                   } 
+             :kaocha {:dependencies [[lambdaisland/kaocha "1.91.1392"]]}
              }
-  :aliases {
-            "api" ["ring" "server-headless" "8080"],
-  }
+  :aliases {"api" ["ring" "server-headless" "8080"]
+            "test" ["with-profile" "+kaocha" "run" "-m" "kaocha.runner"]
+            "fmt" ["cljfmt" "fix"]
+}
   ) 
