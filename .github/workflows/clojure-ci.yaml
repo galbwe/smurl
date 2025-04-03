@@ -17,11 +17,16 @@ jobs:
         with:
           distribution: 'zulu' # See 'Supported distributions' for available options
           java-version: '21'
-      - name: test
-        uses: oxr463/setup-leiningen@0.0.1
-        with:
-          exec: |
-            PATH=$PATH:$JAVA_HOME
-            lein deps &&
-            lein cljfmt check &&
-            lein test
+      - name: debug java install
+        run:
+          echo $JAVA_HOME
+          echo $PATH
+          java -version
+      # - name: test
+      #   uses: oxr463/setup-leiningen@0.0.1
+      #   with:
+      #     exec: |
+      #       PATH=$PATH:$JAVA_HOME/bin
+      #       lein deps &&
+      #       lein cljfmt check &&
+      #       lein test
