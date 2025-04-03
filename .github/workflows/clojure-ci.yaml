@@ -8,15 +8,19 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Use oxr463/setup-leiningen
-      uses: oxr463/setup-leiningen@0.0.1
-      with:
-        exec: |
-          lein deps &&
-          lein cljfmt check &&
-          lein test
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: install java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '21'
+      - name: test
+        uses: oxr463/setup-leiningen@0.0.1
+        with:
+          exec: |
+            lein deps &&
+            lein cljfmt check &&
+            lein test
