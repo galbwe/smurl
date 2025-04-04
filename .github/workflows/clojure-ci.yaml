@@ -7,24 +7,40 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+
+  clojure:
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: install java
+
+      # It is important to install java before installing clojure tools which needs java
+      # exclusions: babashka, clj-kondo and cljstyle
+      - name: Prepare java
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu' # See 'Supported distributions' for available options
+          distribution: 'zulu'
           java-version: '21'
-      - name: test
-        uses: oxr463/setup-leiningen@0.0.1
+
+      - name: Install clojure tools
+        uses: DeLaGuardo/setup-clojure@13.2
         with:
-          exec: |
-            PATH=$PATH:$JAVA_HOME/bin
-            echo $JAVA_HOME
-            echo $PATH
-            ls /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
-            lein deps &&
-            lein cljfmt check &&
-            lein test
+          # Install just one or all simultaneously
+          # The value must indicate a particular version of the tool, or use 'latest'
+          # to always provision the latest version
+          cli: 1.10.1.693              # Clojure CLI based on tools.deps
+          lein: 2.11.2                  # Leiningen
+          
+      - name: Get leiningen version
+        run: lein -v
+        
+      - name: Install leiningen dependencies
+        run: lein deps
+
+      - name: Check formatting
+        run:  lein fmt:check
+      
+      - name: Run tests
+        run: lein test
