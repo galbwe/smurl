@@ -14,7 +14,8 @@
                  [org.postgresql/postgresql "42.3.1"]
                  [environ "1.2.0"]]
   :plugins [[lein-ring "0.12.6"]
-            [lein-environ "1.2.0"]] 
+            [lein-environ "1.2.0"]
+            [lein-cljfmt "0.9.2"]] 
   :resource-paths ["resources" "target"]
   :clean-targets ^{:protect false} ["target/public"]
   :ring {:handler smurl.app/app :init smurl.database/init-localdev :destroy smurl.database/teardown-localdev}
