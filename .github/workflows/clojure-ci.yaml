@@ -52,7 +52,7 @@ jobs:
         run: cljstyle version
 
       - name: Check formatting
-        run: cljfmt check
+        run:  lein fmt:check
       
       - name: Run tests
         run: lein test
