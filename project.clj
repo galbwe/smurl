@@ -34,5 +34,6 @@
   :aliases {"api" ["ring" "server-headless" "8080"]
             "test" ["with-profile" "+kaocha" "run" "-m" "kaocha.runner"]
             "fmt" ["cljfmt" "fix"]
+            "fmt:check" ["cljfmt" "check"]
 }
   ) 
