@@ -32,9 +32,6 @@ jobs:
           # to always provision the latest version
           cli: 1.10.1.693              # Clojure CLI based on tools.deps
           lein: 2.11.2                  # Leiningen
-          clj-kondo: 2022.05.31        # Clj-kondo
-          cljfmt: 0.10.2               # cljfmt
-          cljstyle: 0.16.626           # cljstyle
           
       - name: Get leiningen version
         run: lein -v
@@ -44,12 +41,6 @@ jobs:
 
       - name: Install leiningen dependencies
         run: lein deps
-
-      - name: Get cljfmt version
-        run: cljfmt --version
-
-      - name: Get cljstyle version
-        run: cljstyle version
 
       - name: Check formatting
         run:  lein fmt:check
